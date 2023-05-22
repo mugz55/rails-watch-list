@@ -1,7 +1,22 @@
-<h1>All Lists</h1>
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container d-flex align-items-center">
+    <div>
+      <%= link_to "MovieWatch", lists_path %>
+    </div>
+    <div>
+      <%= link_to "My lists", lists_path %>
+      <%= link_to "New list", new_list_path %>
+    </div>
+  </div>
+</nav>
 
-<% @lists.each do |list| %>
-  <%= link_to list.name, list_path(list) %>
-<% end %>
-
-<%= link_to "Create a new list", new_list_path %>
+<div class="container pt-5">
+  <h1>My Lists</h1>
+  <div class="container cards pt-4">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list), style: "text-decoration: none", class:"link-card" do %>
+        <div class="list-card d-flex align-items-center justify-content-center"><p class="card-title"><%= list.name %></p></div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

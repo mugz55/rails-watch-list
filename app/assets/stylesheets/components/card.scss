@@ -1,0 +1,26 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.link-card {
+  width: 400px;
+}
+
+.list-card {
+  width: 400px;
+  height: 300px;
+  background-image: url("https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1156&q=80");
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #F45050;
+  text-shadow: 2px 2px 5px black;
+}
