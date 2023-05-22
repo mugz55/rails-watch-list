@@ -8,6 +8,10 @@
   width: 400px;
 }
 
+.list-cards {
+  padding-top: 120px;
+}
+
 .list-card {
   width: 400px;
   height: 300px;
@@ -15,6 +19,11 @@
   background-position: center;
   background-size: cover;
   border-radius: 10px;
+  box-shadow: 2px 2px #3C486B;
+}
+
+.list-card:hover{
+  box-shadow: 6px 6px #3C486B;
 }
 
 .card-title {
@@ -23,4 +32,27 @@
   font-weight: 700;
   color: #F45050;
   text-shadow: 2px 2px 5px black;
+}
+
+.movie-cards {
+  padding-top: 120px;
+  width: 60%;
+  height: 300px;
+}
+
+.movie-card {
+  border: 1px solid #DDDDDD;
+  border-radius: 10px;
+  box-shadow: 2px 2px #3C486B;
+}
+
+.movie-card-title {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.comment-box {
+  background-color: #F9D949;
+  border-radius: 2px;
+  box-shadow: 0.5px 0.5px #3C486B;
 }

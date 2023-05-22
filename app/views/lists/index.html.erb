@@ -1,16 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark">
-  <div class="container d-flex align-items-center">
-    <div>
-      <%= link_to "MovieWatch", lists_path %>
-    </div>
-    <div>
-      <%= link_to "My lists", lists_path %>
-      <%= link_to "New list", new_list_path %>
-    </div>
-  </div>
-</nav>
-
-<div class="container pt-5">
+<div class="container list-cards">
   <h1>My Lists</h1>
   <div class="container cards pt-4">
     <% @lists.each do |list| %>

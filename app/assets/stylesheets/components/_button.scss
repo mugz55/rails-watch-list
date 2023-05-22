@@ -1,0 +1,51 @@
+.logo {
+  font-family: 'Pacifico', cursive;
+  text-decoration: none;
+  color: #F9D949;
+  font-size: 36px;
+  text-shadow: 2px 2px #F45050;
+}
+
+.logo:hover {
+  color: #F45050;
+  text-shadow: 2px 2px #F9D949;
+}
+
+.navbar-button {
+  background-color: #F9D949;
+  color: #F45050;
+  padding: 12px 24px;
+  border-radius: 10px;
+  margin-left: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navbar-button:hover {
+  background-color: #F45050;
+  color: #F9D949;
+}
+
+.delete-button {
+  color: #F45050;
+}
+
+.delete-button:hover {
+  color: #3C486B;
+}
+
+.body-button {
+  border-radius: 10px;
+  background-color: #F45050;
+  color: #F9D949;
+  font-size: 20px;
+  font-weight: 600px;
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+.body-button:hover {
+  background-color: #F9D949;
+  color: #F45050;
+}

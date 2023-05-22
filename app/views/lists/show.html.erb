@@ -1,27 +1,38 @@
-<nav class="navbar navbar-expand-lg bg-dark">
-  <div class="container d-flex align-items-center">
+<div class="container movie-cards">
+  <div class="d-flex justify-content-between">
     <div>
-      <%= link_to "MovieWatch", lists_path %>
+      <h1><%= @list.name %></h1>
     </div>
     <div>
-      <%= link_to "My lists", lists_path %>
-      <%= link_to "New list", new_list_path %>
+      <%= link_to "Create new bookmark", new_list_bookmark_path(@list), class: "body-button" %>
     </div>
   </div>
-</nav>
-
-<div class="container pt-5">
-  <h1><%= @list.name %></h1>
   <div>
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="container movie-card d-flex">
-      <img src="<%= bookmark.movie.poster_url%>" alt="movie poster" class="img-movie">
-      <p><%= bookmark.movie.title %></p>
-      <%= link_to "Delete this bookmark", list_bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <div class="container movie-card d-flex my-4 p-0">
+        <img src="<%= bookmark.movie.poster_url%>" alt="movie poster" class="img-movie">
+        <div class="flex-fill p-4">
+          <div class="d-flex align-content-center justify-content-between movie-card-title">
+            <div>
+              <%= bookmark.movie.title %>
+            </div>
+            <div>
+              <%= bookmark.movie.rating %>
+            </div>
+          </div>
+          <div>
+            <p><strong>Description: </strong><%= bookmark.movie.overview %></p>
+          </div>
+          <div class="comment-box">
+            <p><strong>User Comment: </strong><%= bookmark.comment%></p>
+          </div>
+          <div class="trash-can-icon d-flex justify-content-end fs-3">
+            <%= link_to list_bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+              <i class="fa-solid fa-trash-can delete-button"></i>
+            <% end %>
+          </div>
+        </div>
       </div>
     <% end %>
-  </div>
-  <div>
-    <%= link_to "Create new bookmark", new_list_bookmark_path(@list) %>
   </div>
 </div>
