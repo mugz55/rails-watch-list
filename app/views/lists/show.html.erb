@@ -27,7 +27,7 @@
             <p><strong>User Comment: </strong><%= bookmark.comment%></p>
           </div>
           <div class="trash-can-icon d-flex justify-content-end fs-3">
-            <%= link_to list_bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
               <i class="fa-solid fa-trash-can delete-button"></i>
             <% end %>
           </div>
