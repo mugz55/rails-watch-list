@@ -16,3 +16,9 @@ legend ~ div.form-check:first-of-type {
 .bookmark-form {
   width: 35%;
 }
+
+@media only screen and (max-width: 768px) {
+  .bookmark-form {
+    width: 100%;
+  }
+}

@@ -49,3 +49,19 @@
   background-color: #F9D949;
   color: #F45050;
 }
+
+@media only screen and (max-width: 768px) {
+  .navbar-button {
+    padding: 8px 16px;
+    margin-left: 8px;
+    font-size: 16px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .delete-button {
+    font-size: 16px;
+  }
+}

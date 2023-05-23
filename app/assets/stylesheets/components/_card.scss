@@ -55,3 +55,25 @@
   border-radius: 2px;
   box-shadow: 0.5px 0.5px #3C486B;
 }
+
+
+@media only screen and (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .list-card {
+    width: 300px;
+    height: 225px;
+  }
+
+  .movie-card-title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .movie-cards {
+    padding-top: 40px;
+    width: 100%;
+  }
+}

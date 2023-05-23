@@ -1,0 +1,16 @@
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .show-container {
+    flex-direction: column-reverse;
+    margin: 0 18px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}
