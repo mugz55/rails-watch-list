@@ -1,38 +1,49 @@
-<div class="container movie-cards">
-  <div class="d-flex justify-content-between">
-    <div>
-      <h1><%= @list.name %></h1>
+<div class="container d-flex justify-content-between">
+  <div class="container movie-cards">
+    <div class="d-flex justify-content-between">
+      <div>
+        <h1><%= @list.name %></h1>
+      </div>
+      <div>
+      </div>
     </div>
     <div>
-      <%= link_to "Create new bookmark", new_list_bookmark_path(@list), class: "body-button" %>
-    </div>
-  </div>
-  <div>
-    <% @list.bookmarks.each do |bookmark| %>
-      <div class="container movie-card d-flex my-4 p-0">
-        <img src="<%= bookmark.movie.poster_url%>" alt="movie poster" class="img-movie">
-        <div class="flex-fill p-4">
-          <div class="d-flex align-content-center justify-content-between movie-card-title">
-            <div>
-              <%= bookmark.movie.title %>
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="container movie-card d-flex my-4 p-0">
+          <img src="<%= bookmark.movie.poster_url%>" alt="movie poster" class="img-movie">
+          <div class="flex-fill p-4">
+            <div class="d-flex align-content-center justify-content-between movie-card-title">
+              <div>
+                <%= bookmark.movie.title %>
+              </div>
+              <div>
+                <%= bookmark.movie.rating %>
+              </div>
             </div>
             <div>
-              <%= bookmark.movie.rating %>
+              <p><strong>Description: </strong><%= bookmark.movie.overview %></p>
             </div>
-          </div>
-          <div>
-            <p><strong>Description: </strong><%= bookmark.movie.overview %></p>
-          </div>
-          <div class="comment-box">
-            <p><strong>User Comment: </strong><%= bookmark.comment%></p>
-          </div>
-          <div class="trash-can-icon d-flex justify-content-end fs-3">
-            <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-              <i class="fa-solid fa-trash-can delete-button"></i>
-            <% end %>
+            <div class="comment-box">
+              <p><strong>User Comment: </strong><%= bookmark.comment%></p>
+            </div>
+            <div class="trash-can-icon d-flex justify-content-end fs-3">
+              <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash-can delete-button"></i>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+  <div class="container bookmark-form">
+    <div class="container new-item-form">
+      <h1>Add new bookmark</h1>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.association :movie, input_html: {data: {controller: "tom-select"}} %>
+        <%= f.input :comment %>
+        <%= f.submit "Create Bookmark", class: "body-button" %>
+      <% end %>
+    </div>
+  </div>
+<div>
